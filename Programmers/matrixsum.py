@@ -1,5 +1,4 @@
 def solution(arr1, arr2):
-    print(len(arr1[1]))
     answer=[]
     for i in range(len(arr1)):
         temp = []
