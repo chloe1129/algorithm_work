@@ -1,5 +1,7 @@
 # algorithm_work
 
+## Big O
+
 | Sorting Algorithms  | Avg T | Best T  | Wosrt T | Space Complexity |
 |     :---:      |      :---:      |     :---:      |     :---:      |     :---:      |
 | Linear Search  | O(1) | O(n)  | O(n) | O(1) |
