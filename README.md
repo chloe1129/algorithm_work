@@ -10,7 +10,7 @@
 | Merge Sort  | O(nlog n)  | O(nlog n)  | O(log n)  | O(n)  |
 | Quick Sort  | O(nlog n)  | O(nlog n)  | O(n^2)  | O(log n) |
 | Heap Sort  | O(nlog n)  | O(nlog n)  | O(nlog n)  | O(n)  |
-| Bucket Sort  | O(n+k)  | O(n+k)  | O(nk)  | O(n)  |
+| Bucket Sort  | O(n+k)  | O(n+k)  | O(n^2)  | O(n)  |
 | Radix Sort  | O(nk)  | O(nk)  | O(nk)  | O(n+k)  |
 | Tim Sort  | O(n) | O(nlog n)  | O(nlog n)  | O(n)  |
 | Shell Sort  | O(n) | O((nlog(n))^2)  | O((nlog(n))^2)  | O(1)  |
