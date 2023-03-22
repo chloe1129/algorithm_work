@@ -1,7 +1,6 @@
 # algorithm_work
 
 | Sorting Algorithms  | Avg T | Best T  | Wosrt T | Space Complexity |
-| ------------- | ------------- | ------------- | ------------- | ------------- |
 |     :---:      |      :---:      |     :---:      |     :---:      |     :---:      |
 | Linear Search  | O(1) | O(n)  | O(n) | O(1) |
 | Binary Search  | O(1) | O(log n)  | O(log n) | O(1) |
