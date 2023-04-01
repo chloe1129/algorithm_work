@@ -1,9 +1,7 @@
 # Algorithm
 
-## Backjoon
+Backjoon
+Codeup
+Programmers
 
-## Codeup
-
-## Notes
-
-## Programmers
+Study Notes
