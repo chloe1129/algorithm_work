@@ -1,7 +1,7 @@
 # Algorithm
 
-Backjoon
-Codeup
-Programmers
+> Backjoon
+> Codeup
+> Programmers
 
-Study Notes
+> Study Notes
