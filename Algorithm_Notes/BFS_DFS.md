@@ -2,7 +2,7 @@
 
 > Breadth First Search (너비 우선 탐색)
 
-<img align="left" src= "../img/bfs_ex.jpeg", height="90px", width="90px"></img>
+<img src= "../img/bfs_ex.jpeg" width="200px"></img>
 
 시작점인 root 노드와 같은 거리에 있는 노드를 우선으로 방문
 
