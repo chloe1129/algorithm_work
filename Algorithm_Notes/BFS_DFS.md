@@ -2,7 +2,7 @@
 
 > Breadth First Search (너비 우선 탐색)
 
-<img src= "../img/bfs_ex.jpeg" width="200px"></img>
+<img src= "../img/bfs_ex.jpeg" width="400px"></img>
 
 시작점인 root 노드와 같은 거리에 있는 노드를 우선으로 방문
 
@@ -13,6 +13,8 @@ but 큐를 사용하지 않아도 구현이 가능하긴함
 # DFS
 
 > Depth First Search (깊이 우선 탐색)
+
+<img src= "../img/dfs_ex.jpeg" width="400px"></img>
 
 시작점인 root에서 갈 수 있는 한 끝까지 탐색해 leaf 노드를 방문하고 이전에 방문하지 않았던 노드를 선택해 방문
 
