@@ -2,6 +2,9 @@
 
 [문제 링크](https://www.acmicpc.net/problem/9663) 
 
+[유튜브 강의 링크](https://www.youtube.com/watch?v=gcuZ_VGIcn4)
+조건이 추가되어서 python3으로는 시간초과가 나서 pypy3으로 
+
 ### 성능 요약
 
 메모리: 205064 KB, 시간: 30636 ms
