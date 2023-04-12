@@ -20,7 +20,7 @@ def mergeSort(unsorted_list):
     if len(unsorted_list)<=1:
         return unsorted_list
 
-    // list를 반으로 나눔
+    // 가장 짧아질 때까지 계속 반으로 나눔
     mid=len(unsorted_list)//2
     left=MergeSort(unsorted_list[:mid])
     right=MergeSort(unsorted_list[mid:])
