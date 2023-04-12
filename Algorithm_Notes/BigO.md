@@ -1,5 +1,5 @@
 ## Big O
-# Table of Algorithms
+Table of Algorithms
 
 | Sorting Algorithms |   Avg T   |     Best T     |    Wosrt T     | Space Complexity |
 | :----------------: | :-------: | :------------: | :------------: | :--------------: |
