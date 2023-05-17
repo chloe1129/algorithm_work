@@ -1,16 +1,20 @@
+from collections import deque
+
+
 def solution(cards1, cards2, goal):
-    card1 = []
-    card2 = []
+    cards1 = deque(cards1)
+    cards2 = deque(cards2)
+
     for i in goal:
-        if i in cards1:
-            card1.append(i)
-        if i in cards2:
-            card2.append(i)
+        if cards1 and i == cards1[0]:
+            cards1.popleft()
+        elif cards2 and i == cards2[0]:
+            cards2.popleft()
+        else:
+            return "No"
 
-    if cards1 == card1 and cards2 == card2:
-        return "Yes"
-    return "No"
+    return "Yes"
 
 
-print(solution(["i", "water", "drink"], ["want", "to"],
+print(solution(["i", "drink", "water"], ["want", "to"],
       ["i", "want", "to", "drink", "water"]))
