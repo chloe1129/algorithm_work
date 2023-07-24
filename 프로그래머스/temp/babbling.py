@@ -1,32 +1,14 @@
-import re
-
-
-def recure(bab):
-    words = [
-        "aya",
-        "ye",
-        "woo",
-        "ma"
-    ]
-    for n, i in enumerate(words):
-        if i in bab:
-            print("1111111111111111111", i, bab)
-            ind = bab.find(i)
-            print("indexxxxxxxxx", ind)
-            i = i[0:ind]+' '+i[ind+len(i):len(bab)]
-            print("222222222222222", n, i)
-        if n == 4:
-            return 1
-
-    return i
-
-
-def solution(babbling):
-
+def solution(bab):
     answer = 0
-    for i in babbling:
-        print("===========", recure(i))
+    for i in bab:
+        word = str(i)
+        for j in ['aya', 'ye', 'woo', 'ma']:
+            if j*2 not in word:
+                word = word.replace(j, '_'*len(j))
+        if word == '_'*len(word):
+            answer += 1
+
     return answer
 
 
-print(solution(["aya", "yee", "u", "maa"]))
+print(solution(["ayaye", "uuu", "yeye", "yemawoo", "ayaayaa"]))
