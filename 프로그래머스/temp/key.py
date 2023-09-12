@@ -1,17 +1,26 @@
 def solution(keymap, targets):
-    answer = [0]*len(keymap)
     result = []
-    for i in keymap:
-        answer[keymap.index(i)] = dict()
-        for j in range(len(i)):
-            answer[keymap.index(i)][j] = i[j]
-    for i in targets:
-        a = 0
-        for j in i:
-            result.append(list(answer[0].keys())[
-                          list(answer[0].values()).index(j)])
+    count = {}
+    for lst in keymap:
+        for i, pad in enumerate(lst):
+            if (pad in count) and (count[pad] < i):
+                pass
+            else:
+                count[pad] = i
+    print(count)
+    for a in targets:
+        temp = 0
+        for b in a:
+            if b in count:
+                temp += (count[b]+1)
+            else:
+                temp = -1
+                break
+        result.append(temp)
 
     return result
 
 
-print(solution(["ABACD", "BCEFD"], ["ABCD", "AABB"]))
+# print(solution(["ABACD", "BCEFD"], ["ABCD", "AABB"]))
+# print(solution(["A", "AB", "B"], ["B"]))
+print(solution(["BC"], ["AC", "BC"]))
