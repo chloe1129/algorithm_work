@@ -4,3 +4,17 @@
 > 한 두줄 입력받는 문제와 다르게 반복문으로 여러줄 입력 받아야 할 때는 input()으로 입력받으면 시간초과가 발생할 수 있다.
 
 ## sys.stdin.readline() 사용법
+
+### 정수 한 개 입력받을 때
+
+```
+import sys
+a = int(sys.stdin.readline())
+```
+
+### 정해진 개수의 정수를 한줄에 입력받을 때
+
+```
+import sys
+a,b,c = map(int,sys.stdin.readline().split())
+```
