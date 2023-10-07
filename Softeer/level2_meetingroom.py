@@ -4,60 +4,62 @@ import sys
 # m : 예약된 회의의 수
 n, m = map(int, sys.stdin.readline().split())
 
-# room : 회의실의 이름
+# room : 회의실 이름
 room = [sys.stdin.readline().strip() for i in range(n)]
 room = sorted(room)
 
 data = {}
-for i in range(n):
-    data[room[i]] = [9, 10, 11, 12, 13, 14, 15, 16, 17]
+for i in range(len(room)):
+    data[room[i]] = [[9, 18]]
+
+# {'avante':[[9,18]],
+# 'grandeur':[[9,18]],
+# 'sonata':[[9,18]]}
+
+# data['방이름'] -> [[9,18],[]..]
 
 for i in range(m):
-    rroom, st, et = map(str, sys.stdin.readline().split())
+    # r : 방 이름
+    r, st, et = map(str, sys.stdin.readline().split())
+    l = 0
+    st = int(st)
+    et = int(et)
 
-    for j in range(int(st), int(et)):
-        if j in data[rroom]:
-            data[rroom][data[rroom].index(j)] = str(j).replace(str(j), ' ')
+    while (l < len(data[r])):
+        room_time = data[r]
 
-data = dict(sorted(data.items()))
+        if st <= room_time[l][1]:
+            if room_time[l][0] == st and room_time[l][1] == et:
+                data[r].remove([st, et])
+
+            elif room_time[l][0] < st and et < room_time[l][1]:
+                data[r].append([et, room_time[l][1]])
+                room_time[l] = [room_time[l][0], st]
+
+            elif room_time[l][0] < st and room_time[l][1] == et:
+                room_time[l] = [room_time[l][0], st]
+
+            elif room_time[l][0] == st and et < room_time[l][1]:
+                room_time[l] = [et, room_time[l][1]]
+
+            break
+
+        elif st > room_time[l][1]:
+            l += 1
+
+
 for i in range(len(data)):
-    print('Room ' + room[i] + ':')
-    pp = []
-    cnt = 0
-    print('What is in this room', data[room[i]])
-    j = 0
-    while (j < 9):
-
-        print('datadata', j)
-        if data[room[i]][j] == ' ' and j != 0:
-            print('yes', data[room[i]][:j])
-            pp[cnt] = data[room[i]][:j]
-            data[room[i]] = data[room[i]][j+1:]
-            cnt += 1
-            j += 1
-        elif data[room[i]][j] == ' ' and j == 0:
-            print('no', data[room[i]][j+1:])
-            data[room[i]] = data[room[i]][j+1:]
-        elif data[room[i]][j] != ' ':
-            pp[cnt].append(data[room[i]][j])
-            j += 1
-
-    if cnt == 0:
+    data[room[i]] = list(sorted(data[room[i]]))
+    print('Room '+room[i]+':')
+    if len(data[room[i]]) == 0:
         print('Not available')
     else:
-        print(str(cnt)+'available')
-        for i in range(len(cnt)):
-            print(str(pp[i][0]) + '-' + str(pp[i][len(pp[i])]))
+        print(str(len(data[room[i]]))+' available:')
 
+        for j in range(len(data[room[i]])):
+            if data[room[i]][j][0] == 9:
+                data[room[i]][j][0] = '09'
+            print(str(data[room[i]][j][0])+'-'+str(data[room[i]][j][1]))
 
-# 3 7
-# grandeur
-# avante
-# sonata
-# sonata 14 16
-# grandeur 11 12
-# avante 15 18
-# sonata 10 11
-# avante 9 12
-# grandeur 16 18
-# avante 12 15
+    if 0 <= i < len(data)-1:
+        print('-----')
