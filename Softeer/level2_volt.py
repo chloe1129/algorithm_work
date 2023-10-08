@@ -1,7 +1,6 @@
 import sys
 
 info = []
-e = 0
 
 w, n = map(int, sys.stdin.readline().split())
 for i in range(n):
@@ -10,5 +9,17 @@ for i in range(n):
     m, p = map(int, sys.stdin.readline().split())
     info.append([p, m])
 
-
-print(info)
+info.sort(key=lambda x: x[1], reverse=True)
+# print(info)
+total = w
+m = 0
+for i in range(len(info)):
+    # print('what is i :',i)
+    # print('info!!', m,info[i],total)
+    if info[i][1] >= total:
+        m += total*info[i][0]
+        total -= total
+    elif info[i][1] < total:
+        m += (info[i][1]*info[i][0])
+        total -= info[i][1]
+print(m)
