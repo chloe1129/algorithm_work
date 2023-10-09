@@ -1,48 +1,50 @@
 import sys
 
-def dfs(x1,y1):
-    #print('coor in dfs',x1,y1)
-    if x1<0 or y1<0 or x1>n-1 or y1>n-1:
-        return False
-    if block[x1][y1] == 0:
-        # 지나간간 블록 장애물로로 처리
-        block[x1][y1] = 1
-        dfs(x1,y1+1)
-        dfs(x1,y1-1)
-        dfs(x1-1,y1)
-        dfs(x1+1,y1)
-        return [x1,y1]
-    return False
+
+def dfs(x, y, g):
+    global cnt
+    # print('same???????',g ,len(goal)-1)
+    if (g == len(goal)-1):  # 목표의 마지막이라면
+        # print('last>>>>>?', x, y)
+        if (goal[g][0]-1 == x and goal[g][1]-1 == y):
+            cnt += 1
+            # print('endendendendned',cnt)
+            return
+    elif (goal[g][0]-1 == x and goal[g][1]-1 == y):
+        # print('keep going!',x,y,g,len(goal)-1)
+        dfs(x, y, g+1)
+    # visited[x][y] = True
+
+    for i in range(4):
+        # print('checkcheck11', x,y)
+        move_x = [0, 0, -1, 1]
+        move_y = [1, -1, 0, 0]
+        nx = x + move_x[i]
+        ny = y + move_y[i]
+        # print('checkcheck22',nx,ny)
+        if 0 <= nx < n and 0 <= ny < n and visited[nx][ny] == False and block[nx][ny] == 0:
+            # print('original', x, y)
+            # print('can go', nx, ny)
+            visited[nx][ny] = True
+            dfs(nx, ny, g)
+            visited[nx][ny] = False
+
 
 # n : 격자의의 크기
 # m : 방문해야하는 칸의의 개수
-n,m = map(int, sys.stdin.readline().split())
+n, m = map(int, sys.stdin.readline().split())
 
-block =[]
-lst = []
+block = []  # 입력받은 격자 전체 n*n
+goal = []  # 방문해야할 칸의 배열들
 for i in range(n):
-    block.append(list(map(int,sys.stdin.readline().split())))
-
-print('what block look',block)
-for i in range(n):
-    lst.append(list(map(int,sys.stdin.readline().split())))
-print('what lst look',lst)
-
-
-num=0
-result = 0
-while(num<m-1):
-    print('what go to fun',lst[num][1]-1,n-lst[num][0])
-    print('fuc re',dfs(lst[num][1]-1,n-lst[num][0]))
-
-    if dfs(lst[num][1]-1,n-lst[num][0]) == lst[num+1]:
-        print('same???',dfs(lst[num][1]-1,n-lst[num][0]),lst[num+1])
-        num+=1
-    elif dfs(lst[num][1]-1,n-lst[num][0]) in lst:
-    
-    else:
-        dfs(dfs(lst[num][1]-1,n-lst[num][0]))
-    if num == m-1:
-        result+=1
-
-print(result)
+    block.append(list(map(int, sys.stdin.readline().split())))
+for i in range(m):
+    goal.append(list(map(int, sys.stdin.readline().split())))
+print(goal)
+visited = [[False for i in range(n)]for j in range(n)]  # 탐색에서 방문 여부를 체크하는 배열
+# print(visited)
+x, y = goal[0][0]-1, goal[0][1]-1  # 시작 위치
+visited[x][y] = True
+cnt = 0
+dfs(x, y, 0)
+print(cnt)
