@@ -1,4 +1,11 @@
 import sys
+from collections import deque
+
+a = deque()
+a = [1, 2, 3, 4, 5]
+print(a.pop(0))
+
+'''
 data1 = []
 n = int(sys.stdin.readline())
 
@@ -9,6 +16,7 @@ data2 = [sys.stdin.readline().strip() for i in range(n)]
 
 print('data1: ', data1)
 print('data2: ', data2)
+'''
 
 '''
 n = 4
