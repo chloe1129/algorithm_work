@@ -7,12 +7,14 @@
 | value |  5  |  4  |  3  |  2  |  1  |  2  |
 
 ```
+# abs() : 절대값 함수
 num = [1,2,3,4,5,2]
 
+
 for i in range(len(num)):
-    if num[i] < 0 :
-        return i
-    num[i]= - num[i]
+    if nums[abs(nums[i])] < 0 :
+        return abs(nums[i])
+    nums[abs(nums[i])] = - nums[abs(nums[i])]
 ```
 
 - `i = 0` 일 때, `num[0] = 5`
