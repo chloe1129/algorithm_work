@@ -9,3 +9,4 @@
 
 - [릿코드](https://github.com/chloe1129/algorithm_work/tree/main/leetcode)
   - from [코드없는 프로그래밍](https://www.youtube.com/@user-pw9fm4gc7e)
+    - [array](https://github.com/chloe1129/algorithm_work/tree/main/leetcode/array)
