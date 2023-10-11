@@ -9,5 +9,5 @@
 ### [릿코드](https://github.com/chloe1129/algorithm_work/tree/main/leetcode)
   : 릿코드 알고리즘 from [코드없는 프로그래밍](https://www.youtube.com/@user-pw9fm4gc7e)
 
-## [소프티어](https://github.com/chloe1129/algorithm_work/tree/main/Softeer)
+### [소프티어](https://github.com/chloe1129/algorithm_work/tree/main/Softeer)
   : 소프티어 by 현대
