@@ -19,7 +19,7 @@ def solution(id_list, report, k):
     print(user_report, user_warn)
 
     for i in range(len(id_list)):
-        if user_warn[id_list[i]] >= 2:
+        if user_warn[id_list[i]] >= k:
             yes_warn.append(id_list[i])
     print(yes_warn)
 
