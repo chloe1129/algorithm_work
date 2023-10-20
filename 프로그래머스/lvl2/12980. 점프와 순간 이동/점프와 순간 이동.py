@@ -2,10 +2,9 @@ def solution(n):
     ans = 0
     if n == 0:
         ans+= 0
-    elif n == 1 or n == 2:
+    elif n == 1:
         ans+= 1
-    elif n==3 or n==4 or n==5 or n== 6:
-        ans+= 2
+
     else:
         while(n>0):
             if n%2 == 0:
