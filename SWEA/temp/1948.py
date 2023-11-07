@@ -15,7 +15,7 @@ for test_case in range(1, T + 1):
             temp = 0
             # print('333333333333')
             for i in range(month1+1, month2):
-                print('whole month', i)
+                # print('whole month', i)
                 temp += month[i-1]
             print(
                 f'#{str(test_case)} {str(temp+(month[month1-1]-day1+1)+day2)}')
