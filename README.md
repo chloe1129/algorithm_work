@@ -1,3 +1,3 @@
 ## Algorithm Study
 
-> 코테를 뿌셔보자👃🏻
+> JAVA로 코테를 뿌셔보자👃🏻
